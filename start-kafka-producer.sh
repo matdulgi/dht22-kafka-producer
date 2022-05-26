@@ -1,7 +1,5 @@
 #!/bin/bash
 
-set -x
-
 home=$(cd $(dirname $0) && pwd)
 #echo home : $home
 if [ ! -d $home/logs ]; then
@@ -18,4 +16,3 @@ fi
  
 python3 $home/dht22-kafka-producer.py >> $logfile 2>&1 &
 
-set +x
