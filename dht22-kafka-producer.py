@@ -2,6 +2,7 @@ import sys
 import adafruit_dht
 import board
 import time
+import traceback
 from kafka import KafkaProducer
 from json import dumps
 
@@ -26,7 +27,6 @@ while True:
     producer.flush()
     time.sleep(5)
   except RuntimeError as re:
-    print(e, file = sys.stderr)
-    continue
+    traceback.print_exc()
     
 
